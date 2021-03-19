@@ -1,0 +1,45 @@
+.Navbar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(127, 24, 223);
+    height: 110px;
+}  
+.NavLink{
+    float: left;
+    margin-top: 25px;
+    transition: 0.2s;
+} 
+li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}  
+.NavLink:hover{
+    background-color: rgb(149, 77, 216);
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.Brand{
+    float: left;
+    margin-top: 10px;
+    font-size: 32px;
+    padding-right: 40px;
+    transition: 0.2s;
+}
+.Brand:hover{
+    text-decoration: none;
+    color: #cbce91ff;
+}
+@media only screen and (max-width: 500px) {
+    .Navbar{height: 414px;}
+    .NavLink{
+        clear: left;
+        background-color: rgb(149, 77, 216);
+        width: 100%;
+    }
+}
