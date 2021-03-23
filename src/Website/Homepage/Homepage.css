@@ -58,3 +58,39 @@
     .NavLink{clear: left;background-color: rgb(149, 77, 216);width: 100%;}
     .SuggestAccount{width: auto; margin: 0px 30px;}
 }
+.Type, td{
+    border: 1px solid rgb(214, 214, 214);
+    height: 30px;
+    transition: 0.3s;
+}
+.Type{
+    float: right;
+    margin-right: 50px;
+    margin-top: 50px;
+    padding-left: 0px;
+    width: 350px;
+    border-collapse: inherit;
+    text-align: center;
+    border-radius: 10px;
+}
+.Type tr:hover{
+    cursor: pointer;
+    background-color: rgba(221, 221, 221, 0.849);
+    font-size: 20px;
+    color: rgb(185, 156, 212);
+}
+.Type h5{
+    padding-top: 5px;
+}
+.HeaderTable{
+    background-color: rgba(177, 175, 175, 0.822);
+}
+.HeaderTable:hover{
+    cursor: default;
+    background-color: rgb(185, 156, 212);
+    color: black;
+}
+@media only screen and (max-width: 800px) {
+    /*.Type{margin-left:20px;margin-right: 20px;}*/
+    .Type{width:70%; margin-left:15%; margin-right:15%;}
+}
