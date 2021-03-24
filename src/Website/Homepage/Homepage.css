@@ -135,8 +135,6 @@
 }
 .More{background-color:burlywood;}
 .More:hover{background-color:rgba(206, 141, 55, 0.795);}
-.Negotiation{background-color: rgb(165, 218, 105);}
-.Negotiation:hover{background-color: rgba(125, 179, 63, 0.795);}
 @media only screen and (max-width: 1300px) {
     .Type{width:70%; margin-left:15%; margin-right:15%;float: none;clear: both;}
     .Post{width:80%; margin-left:10%; margin-right:10%;}

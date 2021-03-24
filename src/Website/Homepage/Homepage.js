@@ -51,56 +51,8 @@ class Homepage extends Component {
                             <img src={placeholder} alt="Default" title="Image"/>
                             <div className="Description" title="Description">
                                 These Are My Blue Shoes Wich I Really Love Them...
-                                My name is barry allen and im the fastest man alive when i was a child my mother killed with something impossible
                             </div>
-                            <button className="More">More Details</button>
-                            <button className="Negotiation">Negotiation</button>
-                        </div>
-                        <hr/>
-                    </div>
-                    <div className="Post">
-                        <header>
-                            <h5 className="Name" title="Name Of Product">Shoes</h5>
-                            <span className="Time badge" title="Date">2021/3/24</span>
-                        </header>
-                        <div className="Body">
-                            <img src={placeholder} alt="Default" title="Image"/>
-                            <div className="Description" title="Description">
-                                These Are My Blue Shoes Wich I Really Love Them...
-                                My name is barry allen and im the fastest man alive when i was a child my mother killed with something impossible
-                            </div>
-                            <button className="More">More Details</button>
-                            <button className="Negotiation">Negotiation</button>
-                        </div>
-                        <hr/>
-                    </div><div className="Post">
-                        <header>
-                            <h5 className="Name" title="Name Of Product">Shoes</h5>
-                            <span className="Time badge" title="Date">2021/3/24</span>
-                        </header>
-                        <div className="Body">
-                            <img src={placeholder} alt="Default" title="Image"/>
-                            <div className="Description" title="Description">
-                                These Are My Blue Shoes Wich I Really Love Them...
-                                My name is barry allen and im the fastest man alive when i was a child my mother killed with something impossible
-                            </div>
-                            <button className="More">More Details</button>
-                            <button className="Negotiation">Negotiation</button>
-                        </div>
-                        <hr/>
-                    </div><div className="Post">
-                        <header>
-                            <h5 className="Name" title="Name Of Product">Shoes</h5>
-                            <span className="Time badge" title="Date">2021/3/24</span>
-                        </header>
-                        <div className="Body">
-                            <img src={placeholder} alt="Default" title="Image"/>
-                            <div className="Description" title="Description">
-                                These Are My Blue Shoes Wich I Really Love Them...
-                                My name is barry allen and im the fastest man alive when i was a child my mother killed with something impossible
-                            </div>
-                            <button className="More">More Details</button>
-                            <button className="Negotiation">Negotiation</button>
+                            <button className="More">More Details And Negotiation</button>
                         </div>
                         <hr/>
                     </div>
