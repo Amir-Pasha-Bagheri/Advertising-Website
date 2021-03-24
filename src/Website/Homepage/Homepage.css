@@ -90,7 +90,80 @@
     background-color: rgb(185, 156, 212);
     color: black;
 }
-@media only screen and (max-width: 800px) {
-    /*.Type{margin-left:20px;margin-right: 20px;}*/
-    .Type{width:70%; margin-left:15%; margin-right:15%;}
+.Post header h5{
+    float: right;
+}
+.Post header span{
+    background-color: cornsilk;
+    font-size: 16px;
+}
+.Post header{
+    background-color: rgb(212, 212, 212);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 20px 20px;
+}
+.Post{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+.Body img{
+    width: 150px;
+    height: 150px;
+    float: left;
+}
+.Body{
+    width: 500px;
+}
+.Description{
+    padding: 10px 30px;
+    height: 110px;
+    width: 350px;
+    background-color: rgb(255, 255, 242);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.More, .Negotiation{
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    margin: 10px 20px;
+    transition: 0.3s;
+}
+.More{background-color:burlywood;}
+.More:hover{background-color:rgba(206, 141, 55, 0.795);}
+.Negotiation{background-color: rgb(165, 218, 105);}
+.Negotiation:hover{background-color: rgba(125, 179, 63, 0.795);}
+@media only screen and (max-width: 1300px) {
+    .Type{width:70%; margin-left:15%; margin-right:15%;float: none;clear: both;}
+    .Post{width:80%; margin-left:10%; margin-right:10%;}
+    .Post, .Body, .Description{width: auto;}
+    .Body img{width: 100px; height: 100px;}
+}
+
+
+/* width */
+::-webkit-scrollbar {
+width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: #f1f1f1; 
+border-radius: 1px;
+
+}
+    
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #888; 
+border-radius: 1px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #555; 
 }
