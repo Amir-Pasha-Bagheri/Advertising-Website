@@ -9,7 +9,7 @@ class Homepage extends Component {
             <React.Fragment>
                 <ul className="Navbar">
                     <li><a href="/#" className="Brand rounded" title="Name Of Website">Website</a></li>
-                    <li><a href="/#" className="NavLink rounded">Home 🏠</a></li>
+                    <li><a href="/#" className="NavLink rounded" style={{color:"#cbce91ff"}}>Home 🏠</a></li>
                     <li><a href="/#" className="NavLink rounded">Add Your Product ✔</a></li>
                     <li><a href="/#" className="NavLink rounded">Contact Us ☎</a></li>
                     <li><a href="/#" className="NavLink rounded">About Us ⁉</a></li>
@@ -48,11 +48,28 @@ class Homepage extends Component {
                             <span className="Time badge" title="Date">2021/3/24</span>
                         </header>
                         <div className="Body">
-                            <img src={placeholder} alt="Default" title="Image"/>
+                            <img src={placeholder} alt="Default" title="Image" loading="lazy"/>
                             <div className="Description" title="Description">
                                 These Are My Blue Shoes Wich I Really Love Them...
                             </div>
                             <button className="More">More Details And Negotiation</button>
+                            <button className="PriceButton" disabled>36 $</button>
+                        </div>
+                        <hr/>
+                    </div>
+
+                    <div className="Post">
+                        <header>
+                            <h5 className="Name" title="Name Of Product">Shoes</h5>
+                            <span className="Time badge" title="Date">2021/3/24</span>
+                        </header>
+                        <div className="Body">
+                            <img src={placeholder} alt="Default" title="Image" loading="lazy"/>
+                            <div className="Description" title="Description">
+                                These Are My Blue Shoes Wich I Really Love Them...
+                            </div>
+                            <button className="More">More Details And Negotiation</button>
+                            <button className="PriceButton" disabled>50 $</button>
                         </div>
                         <hr/>
                     </div>
