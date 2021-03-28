@@ -18,8 +18,8 @@ class AddProduct extends Component {
                     <h6>Already Have An Account ? <a href="/#">Click Here</a></h6>
                 </div>
 
-                <h3 className="SuccessMessage" id="">
-                    Your Post Added Successfully<br/>
+                <h3 className="SuccessMessage" id="SuccessMessage">
+                    Your Post Added Successfully<br/><br/>
                     Go To HomePage And See Your Product
                 </h3>
 
