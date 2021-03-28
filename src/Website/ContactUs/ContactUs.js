@@ -20,11 +20,11 @@ class ContactUs extends Component {
                     Thank You For Checking Our Website.<br/>
                     I Hope You Like It.<br/><br/><br/>
                     Here Are Few Way Which You can Contact Us :<br/><br/>
-                    <img src={telegram} alt="Telegram" width="20px" height="20px"/> +98 937 345 2374<br/><br/>
-                    <img src={whatsapp} alt="Whatsapp" width="19px" height="19px"/> +98 937 345 2374<br/><br/>
+                    <p className="SocialIcons"><img src={telegram} alt="Telegram" width="20px" height="20px"/> +98 937 345 2374</p>
+                    <p className="SocialIcons"><img src={whatsapp} alt="Whatsapp" width="19px" height="19px"/> +98 937 345 2374</p>
                     You can text me in Whatsapp or Telegram.<br/>
                     Or send me e-mail.<br/><br/>
-                    <img src={gmail} alt="gmail" className="Gmail"/> a.p.bagheri83@gmail.com<br/><br/>
+                    <p className="SocialIcons"><img src={gmail} alt="gmail" className="Gmail"/> a.p.bagheri83@gmail.com</p>
                     24 Hours available :)
                 </div>
                 <br/><br/>
