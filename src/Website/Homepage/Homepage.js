@@ -12,7 +12,7 @@ class Homepage extends Component {
                     <li><a href="/#" className="NavLink rounded" style={{color:"#cbce91ff"}}>Home 🏠</a></li>
                     <li><a href="/#" className="NavLink rounded">Add Your Product ✔</a></li>
                     <li><a href="/#" className="NavLink rounded">Contact Us ☎</a></li>
-                    <li><a href="/#" className="NavLink rounded">About Us ⁉</a></li>
+                    <li><a href="/#" className="NavLink rounded">Sign In 🙍‍♂️</a></li>
                 </ul>
                 <div className="SuggestAccount">
                     <h4>Create Account To Sell Your Own Products</h4>
