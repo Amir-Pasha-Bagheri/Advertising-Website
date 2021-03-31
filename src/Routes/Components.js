@@ -4,11 +4,14 @@ import ContactUs from '../Website/ContactUs/ContactUs'
 import SignIn from '../Website/SignIn/SignIn'
 import Login from '../Website/Login/LogIn'
 
-const homepage = () =>{return <Homepage/>}
-const addproduct = () =>{return <AddProduct/>}
-const contactus = () =>{return <ContactUs/>}
-const signin = () =>{return <SignIn/>}
-const login = () =>{return <Login/>}
+import {Provider} from 'react-redux'
+import store from '../Data/store'
+
+const homepage = () =>{return <Provider store={store}><Homepage/></Provider>}
+const addproduct = () =>{return <Provider store={store}><AddProduct/></Provider>}
+const contactus = () =>{return <Provider store={store}><ContactUs/></Provider>}
+const signin = () =>{return <Provider store={store}><SignIn/></Provider>}
+const login = () =>{return <Provider store={store}><Login/></Provider>}
 const notfound = () =>{return(
     <div>Not Found</div>
 )}
