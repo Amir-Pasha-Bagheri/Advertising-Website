@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from 'react-router-dom'
 import './AddProduct.css'
 
 class AddProduct extends Component {
@@ -6,16 +7,17 @@ class AddProduct extends Component {
         return(
             <React.Fragment>
                 <ul className="Navbar">
-                    <li><a href="/#" className="Brand rounded" title="Name Of Website">Website</a></li>
-                    <li><a href="/#" className="NavLink rounded">Home 🏠</a></li>
-                    <li><a href="/#" className="NavLink rounded" style={{color:"#cbce91ff"}}>Add Your Product ✔</a></li>
-                    <li><a href="/#" className="NavLink rounded">Contact Us ☎</a></li>
-                    <li><a href="/#" className="NavLink rounded">Sign In 🙍‍♂️</a></li>
+                    <Link to="/"><li><a href="/#" className="Brand rounded" title="Name Of Website">Website</a></li></Link>
+                    <Link to="/"><li><a href="/#" className="NavLink rounded">Home 🏠</a></li></Link>
+                    <Link to="/Add-Product"><li><a href="/#" className="NavLink rounded" style={{color:"#cbce91ff"}}>Add Your Product ✔</a></li></Link>
+                    <Link to="/Contact-Us"><li><a href="/#" className="NavLink rounded">Contact Us ☎</a></li></Link>
+                    <Link to="/Create-Account"><li><a href="/#" className="NavLink rounded">Sign In 🙍‍♂️</a></li></Link>
                 </ul>
+
                 <div className="SuggestAccount">
                     <h4>Create Account To Sell Your Own Products</h4>
-                    <h5><a href="/#">Create Account</a></h5>
-                    <h6>Already Have An Account ? <a href="/#">Click Here</a></h6>
+                    <Link to="/Create-Account"><h5><a href="/#">Create Account</a></h5></Link>
+                   <h6>Already Have An Account ?  <Link to="/Log-In"><a href="/#">Click Here</a></Link></h6>
                 </div>
 
                 <h3 className="SuccessMessage" id="SuccessMessage">
