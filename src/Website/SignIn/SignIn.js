@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 import './SignIn.css'
 
 class SignIn extends Component{
@@ -76,11 +77,11 @@ class SignIn extends Component{
         return(
             <React.Fragment>
                 <ul className="Navbar">
-                    <li><a href="/#" className="Brand rounded" title="Name Of Website">Website</a></li>
-                    <li><a href="/#" className="NavLink rounded">Home 🏠</a></li>
-                    <li><a href="/#" className="NavLink rounded">Add Your Product ✔</a></li>
-                    <li><a href="/#" className="NavLink rounded">Contact Us ☎</a></li>
-                    <li><a href="/#" className="NavLink rounded" style={{color:"#cbce91ff"}}>Sign In 🙍‍♂️</a></li>
+                    <Link to="/"><li><a href="/#" className="Brand rounded" title="Name Of Website">Website</a></li></Link>
+                    <Link to="/"><li><a href="/#" className="NavLink rounded">Home 🏠</a></li></Link>
+                    <Link to="/Add-Product" ><li><a href="/#" className="NavLink rounded">Add Your Product ✔</a></li></Link>
+                    <Link to="/Contact-Us"><li><a href="/#" className="NavLink rounded">Contact Us ☎</a></li></Link>
+                    <Link to="/Create-Account"><li><a href="/#" className="NavLink rounded" style={{color:"#cbce91ff"}}>Sign In 🙍‍♂️</a></li></Link>
                 </ul>
                 <form className="SignInForm">
                     <hr/>
