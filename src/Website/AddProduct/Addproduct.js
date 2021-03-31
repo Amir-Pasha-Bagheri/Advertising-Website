@@ -28,16 +28,16 @@ class AddProduct extends Component {
                 <form className="CreatePost">
                     <hr/>
 
-                    <label for="name"> Name Of Your Product :</label>
+                    <label htmlFor="name"> Name Of Your Product :</label>
                     <input type="text" className="form-control" name="name" autoComplete="off" placeholder="👕"/>
 
-                    <label for="price"> Price ($):</label>
+                    <label htmlFor="price"> Price ($):</label>
                     <input type="number" className="form-control" name="price" autoComplete="off" placeholder="💵"/>
 
-                    <label for="photo" style={{paddingTop:"20px"}}> Choose A Picture :</label><br/>
+                    <label htmlFor="photo" style={{paddingTop:"20px"}}> Choose A Picture :</label><br/>
                     <input type="file" className="InputImage" name="photo" accept="image/*"/><br/>
 
-                    <label for="description">Description :</label><br/>
+                    <label htmlFor="description">Description :</label><br/>
                     <textarea rows="3" cols="30" className="form-control" placeholder="✏"></textarea>
 
                     <h5 className="ErrorMessage" id="Message">⚠ Plaese Enter Something </h5>

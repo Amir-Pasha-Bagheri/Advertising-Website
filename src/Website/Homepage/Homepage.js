@@ -23,25 +23,27 @@ class Homepage extends Component {
                 </div>
 
                 <div>
-                    <table class="Type">
-                        <tr>
-                            <td className="HeaderTable"><h5>Price</h5></td>
-                        </tr>
-                        <tr>
-                            <td title="Cheap To Expensive">Down To Up</td>
-                        </tr>
-                        <tr>
-                            <td title="Expensive To Cheap">Up To Down</td>
-                        </tr>
-                        <tr>
-                            <td className="HeaderTable"><h5>Date</h5></td>
-                        </tr>
-                        <tr>
-                            <td title="Recent Products">Newest</td>
-                        </tr>
-                        <tr>
-                            <td title="Latest Products">Oldest</td>
-                        </tr>
+                    <table className="Type">
+                        <tbody>
+                            <tr>
+                                <td className="HeaderTable"><h5>Price</h5></td>
+                            </tr>
+                            <tr>
+                                <td title="Cheap To Expensive">Down To Up</td>
+                            </tr>
+                            <tr>
+                                <td title="Expensive To Cheap">Up To Down</td>
+                            </tr>
+                            <tr>
+                                <td className="HeaderTable"><h5>Date</h5></td>
+                            </tr>
+                            <tr>
+                                <td title="Recent Products">Newest</td>
+                            </tr>
+                            <tr>
+                                <td title="Latest Products">Oldest</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
                 <div id="page1">

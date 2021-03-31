@@ -4,17 +4,19 @@ import './index.css';
 import Routes from './Routes/Routes'
 import reportWebVitals from './reportWebVitals';
 import ScrollToTop from './Routes/ScrollToUp'
-import createHistory from 'history/createBrowserHistory'
 import {Router} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-const history = createHistory()
+import {Provider} from 'react-redux'
+import store from './Data/store'
+import history from './history'
 
 ReactDOM.render(
-  <Router history={history}>
-    <Routes />
-    <ScrollToTop/>
-  </Router>,
+  <Provider store={store}>
+    <Router history={history}>
+      <Routes />
+      <ScrollToTop/>
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );
 

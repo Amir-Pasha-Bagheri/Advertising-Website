@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+import { connect } from 'react-redux'
+import history from '../../history'
 import './SignIn.css'
 
 class SignIn extends Component{
@@ -74,6 +76,17 @@ class SignIn extends Component{
                 x.type = 'password'
             }
         }
+
+        const submit = () =>{
+            const validAmount = document.querySelectorAll(".valid")
+            let usernameField = document.getElementById('username').value
+            if(validAmount.length===4 && usernameField.length>=8){
+                console.log('this.props.status');
+                document.getElementById('username').value = ''
+                document.getElementById('password').value = ''
+                history.push('/')
+            }
+        }
         return(
             <React.Fragment>
                 <ul className="Navbar">
@@ -86,13 +99,13 @@ class SignIn extends Component{
                 <form className="SignInForm">
                     <hr/>
 
-                    <label for="name">Username :</label>
+                    <label htmlFor="name">Username :</label>
                     <input type="text" id="username" onKeyUp={enterUserName} className="form-control" pattern=".{8,}" name="username" title="Your Username Must Contain 8 Characters." placeholder="Your Userame Must Contain 8 Characters" required/>
                     
-                    <label for="name">Password :</label>
-                        <div class="input-group mb-3">
+                    <label htmlFor="name">Password :</label>
+                        <div className="input-group mb-3">
                             <input type="password" id="password" onKeyUp={enterPassword} className="form-control" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).{6,}" name="password" placeholder="At least one Lowercase, Uppercase and number" title="Your Password Must Contain at least 8 Characters one Lowercase, one Uppercase and Number." required/>
-                            <div class="input-group-append input-group-text">
+                            <div className="input-group-append input-group-text">
                                 👁 <input type="checkbox" id="checkbox" onClick={checkbox}/>
                             </div>
                         </div>
@@ -103,11 +116,17 @@ class SignIn extends Component{
                         <p id="number" className="invalid">At least One Number.</p>
                         <p id="chars" className="invalid">At least 6 Characters Or More.</p><br/>
                     </div>
-                    <button type="submit" className="SubmitAccount bg-success">Submit</button>
+                    <Link to="/"><button className="SubmitAccount bg-success" onClick={submit}>Submit</button></Link>
+
                 </form><br/><br/>
             </React.Fragment>
         )
     }
 }
 
-export default SignIn
+const mapStateToProps = state =>{
+    const status = state
+    return {status}
+  }
+
+export default connect(mapStateToProps)(SignIn)
