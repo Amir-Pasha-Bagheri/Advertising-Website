@@ -2,11 +2,13 @@ import Homepage from '../Website/Homepage/Homepage'
 import AddProduct from '../Website/AddProduct/Addproduct'
 import ContactUs from '../Website/ContactUs/ContactUs'
 import SignIn from '../Website/SignIn/SignIn'
+import Login from '../Website/Login/LogIn'
 
 const homepage = () =>{return <Homepage/>}
 const addproduct = () =>{return <AddProduct/>}
 const contactus = () =>{return <ContactUs/>}
 const signin = () =>{return <SignIn/>}
+const login = () =>{return <Login/>}
 const notfound = () =>{return(
     <div>Not Found</div>
 )}
@@ -16,5 +18,6 @@ export{
     notfound,
     addproduct,
     contactus,
-    signin
+    signin,
+    login
 }
