@@ -52,9 +52,21 @@
 }
 .validStatus .invalid{
     color: rgb(141, 39, 39);
+    transition: 0.3s;
 }
 .validStatus .valid{
     color: rgb(9, 180, 95);
+    transition: 0.3s;
+}
+.invalid:hover{
+    padding: 6px 10px;
+    font-size: 20px;
+    cursor: default;
+}
+.valid:hover{
+    padding: 6px 10px;
+    font-size: 20px;
+    cursor: default;
 }
 .SignInForm{
     width: 50%;
@@ -74,4 +86,21 @@
 }
 .SignInForm:hover{
     box-shadow: 4px 4px 5px black;
+}
+.SignInForm label{
+    margin-top: 10px;
+}
+.SubmitAccount{
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    transition: 0.3s;
+    width: 80%;
+    margin: 0px 10% 0px 10%;
+}
+.SubmitAccount:hover{
+    background-color: green;
+}
+@media only screen and (max-width: 1100px) {
+    .SignInForm{width: 80%;margin-left: 10%; margin-right: 10%;}
 }
