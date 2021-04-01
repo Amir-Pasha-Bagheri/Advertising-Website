@@ -7,11 +7,20 @@ const initialState = {
 }
 
 const Reducer = (state = initialState, action)=>{
-    switch(action.type){
-        case(act.setUser):
+    switch(action.type){ 
+
+        case(act.SetUser): // Set Current User
             return update(state,{
-                users:{$set: action.username}
+                currentUser:{$set: action.username}
             })
+
+        case(act.AddUserToArray): //Push New User To Users Array
+            const PushNewAcoount = {username: action.username, password: action.password}
+            return {
+                ...state,
+                users:[...state.users, PushNewAcoount]
+            }
+            
         default: return state
     }
 }

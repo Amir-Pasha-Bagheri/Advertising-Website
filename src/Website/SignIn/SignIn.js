@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
 import history from '../../history'
+import * as act from '../../Data/action'
 import './SignIn.css'
 
 class SignIn extends Component{
@@ -78,10 +79,15 @@ class SignIn extends Component{
         }
 
         const submit = () =>{
+
+            // CREATING NEW ACCOUNT
+
             const validAmount = document.querySelectorAll(".valid")
             let usernameField = document.getElementById('username').value
             if(validAmount.length===4 && usernameField.length>=8){
-                console.log('this.props.status');
+                this.props.dispatch({type:act.SetUser, username: usernameField})
+                this.props.dispatch({type:act.AddUserToArray, username: usernameField, password: document.getElementById('password').value})
+
                 document.getElementById('username').value = ''
                 document.getElementById('password').value = ''
                 history.push('/')
@@ -116,7 +122,7 @@ class SignIn extends Component{
                         <p id="number" className="invalid">At least One Number.</p>
                         <p id="chars" className="invalid">At least 6 Characters Or More.</p><br/>
                     </div>
-                    <Link to="/"><button className="SubmitAccount bg-success" onClick={submit}>Submit</button></Link>
+                    <button className="SubmitAccount bg-success" onClick={submit}>Submit</button>
 
                 </form><br/><br/>
             </React.Fragment>

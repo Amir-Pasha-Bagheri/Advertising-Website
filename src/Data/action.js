@@ -5,6 +5,8 @@ const setUser = () =>({type:SetUser})
 const addUserToArray = () =>({type:AddUserToArray})
 
 export{
+    SetUser,
+    AddUserToArray,
     setUser,
     addUserToArray
 }

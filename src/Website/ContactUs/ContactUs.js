@@ -4,9 +4,14 @@ import telegram from './Image/telegram.png'
 import whatsapp from './Image/whatsapp.jpg'
 import gmail from './Image/gmail.png'
 import {Link} from 'react-router-dom'
+import { connect } from 'react-redux'
+import history from "../../history";
 
 class ContactUs extends Component {
     render(){
+        const SignInClick = () =>{
+            this.props.status.currentUser===undefined? history.push('/Create-Account'): history.push('/Account')
+        }
         return(
             <React.Fragment>
                 <ul className="Navbar">
@@ -14,7 +19,7 @@ class ContactUs extends Component {
                     <Link to="/"><li><a href="/#" className="NavLink rounded">Home 🏠</a></li></Link>
                     <Link to="/Add-Product" ><li><a href="/#" className="NavLink rounded">Add Your Product ✔</a></li></Link>
                     <Link to="/Contact-Us"><li><a href="/#" className="NavLink rounded" style={{color:"#cbce91ff"}}>Contact Us ☎</a></li></Link>
-                    <Link to="/Create-Account"><li><a href="/#" className="NavLink rounded">Sign In 🙍‍♂️</a></li></Link>
+                    <li className="NavLink rounded" onClick={SignInClick}>{this.props.status.currentUser===undefined? 'Sign In 🙍‍♂️': this.props.status.currentUser}</li>
                 </ul>
                 <div className="Container">
                     <h5>Contact US</h5><hr/><br/>
@@ -34,4 +39,9 @@ class ContactUs extends Component {
     }
 }
 
-export default ContactUs
+const mapStateToProps = state =>{
+    const status = state
+    return {status}
+  }
+
+export default connect(mapStateToProps)(ContactUs)

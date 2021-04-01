@@ -2,10 +2,15 @@ import React, { Component } from "react";
 import './Homepage.css'
 import {Link} from 'react-router-dom'
 import placeholder from "./Image/placeholder.png"
+import { connect } from 'react-redux'
+import history from "../../history";
 
 
 class Homepage extends Component {
     render(){
+        const SignInClick = () =>{
+            this.props.status.currentUser===undefined? history.push('/Create-Account'): history.push('/Account')
+        }
         return(
             <React.Fragment>
                 <ul className="Navbar">
@@ -13,14 +18,16 @@ class Homepage extends Component {
                     <Link to="/"><li><a href="/#" className="NavLink rounded" style={{color:"#cbce91ff"}}>Home 🏠</a></li></Link>
                     <Link to="/Add-Product" ><li><a href="/#" className="NavLink rounded">Add Your Product ✔</a></li></Link>
                     <Link to="/Contact-Us"><li><a href="/#" className="NavLink rounded">Contact Us ☎</a></li></Link>
-                    <Link to="/Create-Account"><li><a href="/#" className="NavLink rounded">Sign In 🙍‍♂️</a></li></Link>
+                    <li className="NavLink rounded" onClick={SignInClick}>{this.props.status.currentUser===undefined? 'Sign In 🙍‍♂️': this.props.status.currentUser}</li>
                 </ul>
 
+                {this.props.status.currentUser===undefined ? 
                 <div className="SuggestAccount">
                     <h4>Create Account To Sell Your Own Products</h4>
                     <Link to="/Create-Account"><h5><a href="/#">Create Account</a></h5></Link>
                     <h6>Already Have An Account ?  <Link to="/Log-In"><a href="/#">Click Here</a></Link></h6>
-                </div>
+                </div>:
+                false}
 
                 <div>
                     <table className="Type">
@@ -84,4 +91,9 @@ class Homepage extends Component {
     }
 }
 
-export default Homepage
+const mapStateToProps = state =>{
+    const status = state
+    return {status}
+  }
+
+export default connect(mapStateToProps)(Homepage)
