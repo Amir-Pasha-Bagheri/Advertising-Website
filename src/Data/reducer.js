@@ -20,7 +20,20 @@ const Reducer = (state = initialState, action)=>{
                 ...state,
                 users:[...state.users, PushNewAcoount]
             }
-            
+
+        case(act.SetUserUndefind): //Remove Current User For Log Out
+            return update(state,{
+                currentUser:{$set:undefined}
+            })
+
+        case(act.ChangePassword):
+            return update(state,{
+                users:{
+                    [action.index]:{
+                        password:{$set:action.newpassword}
+                    }
+                }
+            })
         default: return state
     }
 }
