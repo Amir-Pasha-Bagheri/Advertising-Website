@@ -99,11 +99,11 @@ class LogIn extends Component{
                     <hr/>
 
                     <label htmlFor="name">Username :</label>
-                    <input type="text" id="username" onKeyUp={enterUserName} className="form-control" pattern=".{8,}" name="username" title="Your Username Must Contain 8 Characters." placeholder="Your Userame Must Contain 8 Characters" required/>
+                    <input type="text" id="username" onKeyUp={enterUserName} className="form-control" pattern=".{8,}" name="username" title="Your Username Must Contain 8 Characters." placeholder="Your Userame Must Contain 6 Characters" required/>
                     
                     <label htmlFor="name">Password :</label>
                         <div className="input-group mb-3">
-                            <input type="password" id="password" onKeyUp={enterPassword} className="form-control" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).{6,}" name="password" placeholder="At least one Lowercase, Uppercase and number" title="Your Password Must Contain at least 8 Characters one Lowercase, one Uppercase and Number." required/>
+                            <input type="password" id="password" onKeyUp={enterPassword} className="form-control" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).{6,}" name="password" placeholder="At least one Lowercase, Uppercase and number" title="Your Password Must Contain at least 6 Characters one Lowercase, one Uppercase and Number." required/>
                             <div className="input-group-append input-group-text">
                                 👁 <input type="checkbox" id="checkbox" onClick={checkbox}/>
                             </div>

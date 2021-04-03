@@ -8,6 +8,7 @@ import history from "../../history";
 
 class Homepage extends Component {
     render(){
+        console.log(this.props.status.users);
         const SignInClick = () =>{
             this.props.status.currentUser===undefined? history.push('/Create-Account'): history.push('/Account')
         }

@@ -28,30 +28,32 @@ class AddProduct extends Component {
                 false}
 
                 {this.props.status.currentUser!==undefined ? 
-                <form className="CreatePost">
-                    <hr/>
+                <div>
+                    <h3 className="SuccessMessage" id="SuccessMessage">
+                        Your Post Added Successfully<br/><br/>
+                        Go To HomePage And See Your Product
+                    </h3>
+                    <form className="CreatePost">
+                        <hr/>
 
-                    <label htmlFor="name"> Name Of Your Product :</label>
-                    <input type="text" className="form-control" name="name" autoComplete="off" placeholder="👕"/>
+                        <label htmlFor="name"> Name Of Your Product :</label>
+                        <input type="text" className="form-control" name="name" autoComplete="off" placeholder="👕"/>
 
-                    <label htmlFor="price"> Price ($):</label>
-                    <input type="number" className="form-control" name="price" autoComplete="off" placeholder="💵"/>
+                        <label htmlFor="price"> Price ($):</label>
+                        <input type="number" className="form-control" name="price" autoComplete="off" placeholder="💵"/>
 
-                    <label htmlFor="photo" style={{paddingTop:"20px"}}> Choose A Picture :</label><br/>
-                    <input type="file" className="InputImage" name="photo" accept="image/*"/><br/>
+                        <label htmlFor="photo" style={{paddingTop:"20px"}}> Choose A Picture :</label><br/>
+                        <input type="file" className="InputImage" name="photo" accept="image/*"/><br/>
 
-                    <label htmlFor="description">Description :</label><br/>
-                    <textarea rows="3" cols="30" className="form-control" placeholder="✏"></textarea>
+                        <label htmlFor="description">Description :</label><br/>
+                        <textarea rows="3" cols="30" className="form-control" placeholder="✏"></textarea>
 
-                    <h5 className="ErrorMessage" id="Message">⚠ Plaese Enter Something </h5>
-                    
-                    <button type="submit" style={{backgroundColor:"rgb(181, 228, 123)",border:"1px solid rgb(88, 110, 61)"}}>Add</button>
-                </form>
+                        <h5 className="ErrorMessage" id="Message">⚠ Plaese Enter Something </h5>
+                        
+                        <button type="submit" style={{backgroundColor:"rgb(181, 228, 123)",border:"1px solid rgb(88, 110, 61)"}}>Add</button>
+                    </form>
+                </div>
                 :false}
-                <h3 className="SuccessMessage" id="SuccessMessage">
-                    Your Post Added Successfully<br/><br/>
-                    Go To HomePage And See Your Product
-                </h3>
 
                 <br/><br/>
             </React.Fragment>
