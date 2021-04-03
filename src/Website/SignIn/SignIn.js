@@ -78,19 +78,26 @@ class SignIn extends Component{
             }
         }
 
-        const submit = () =>{
-
+        const submit = (e) =>{
             // CREATING NEW ACCOUNT
-
             const validAmount = document.querySelectorAll(".valid")
             let usernameField = document.getElementById('username').value
-            if(validAmount.length===4 && usernameField.length>=8){
-                this.props.dispatch({type:act.SetUser, username: usernameField})
-                this.props.dispatch({type:act.AddUserToArray, username: usernameField, password: document.getElementById('password').value})
-
-                document.getElementById('username').value = ''
-                document.getElementById('password').value = ''
-                history.push('/')
+            // CHECK USERNAME
+            const usernameFind = this.props.status.users.find(user=>user.username===usernameField)
+            if(!usernameFind){
+                // CHECK PASSWORD
+                if(validAmount.length===4 && usernameField.length>=8){
+                    this.props.dispatch({type:act.SetUser, username: usernameField})
+                    this.props.dispatch({type:act.AddUserToArray, username: usernameField, password: document.getElementById('password').value})
+    
+                    document.getElementById('username').value = ''
+                    document.getElementById('password').value = ''
+                    history.push('/')
+                }
+            }
+            else{
+                e.preventDefault()
+                document.getElementById('DangerMessage').style.display = "block"
             }
         }
         return(
@@ -102,6 +109,9 @@ class SignIn extends Component{
                     <Link to="/Contact-Us"><li><a href="/#" className="NavLink rounded">Contact Us ☎</a></li></Link>
                     <Link to="/Create-Account"><li><a href="/#" className="NavLink rounded" style={{color:"#cbce91ff"}}>Sign In 🙍‍♂️</a></li></Link>
                 </ul>
+
+                <h3 className="DangerMessage bg-danger" id="DangerMessage" style={{display:"none"}}>This Username Already Exist !</h3>
+
                 <form className="SignInForm">
                     <hr/>
 
