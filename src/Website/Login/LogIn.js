@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
+import * as act from '../../Data/action' 
 import history from '../../history'
 import './LogIn.css'
 
@@ -76,14 +77,29 @@ class LogIn extends Component{
                 x.type = 'password'
             }
         }
-        const submit = () =>{
-            const validAmount = document.querySelectorAll(".valid")
+
+        //Finding Existing Account For Log In 
+        const submit = (e) =>{
+            e.preventDefault()
             let usernameField = document.getElementById('username').value
-            if(validAmount.length===4 && usernameField.length>=8){
-                console.log('this.props.status');
-                document.getElementById('username').value = ''
-                document.getElementById('password').value = ''
-                history.push('/')
+            const userFind = this.props.status.users.find(user=>user.username===usernameField)
+            if(userFind){
+                if(usernameField===userFind.username){
+                    if(userFind.password===document.getElementById('password').value){
+                        this.props.dispatch({type:act.SetUser, username: usernameField})
+                        history.push('/')
+                    }
+                    else{
+                        document.getElementById('DangerMessage').style.display = "block"
+                        document.getElementById('DangerMessage').innerHTML = "Password Is Not Correct !"
+                    }
+                }
+                else{
+                    document.getElementById('DangerMessage').style.display = "block"
+                }
+            }
+            else{
+                document.getElementById('DangerMessage').style.display = "block"
             }
         }
         return(
@@ -95,6 +111,9 @@ class LogIn extends Component{
                     <Link to="/Contact-Us"><li><a href="/#" className="NavLink rounded">Contact Us ☎</a></li></Link>
                     <Link to="/Log-In"><li><a href="/#" className="NavLink rounded" style={{color:"#cbce91ff"}}>Log In 🙍‍♂️</a></li></Link>
                 </ul>
+
+                <h3 className="DangerMessage bg-danger" id="DangerMessage" style={{display:"none"}}>This Username Does Not Exist !</h3>
+
                 <form className="SignInForm">
                     <hr/>
 
