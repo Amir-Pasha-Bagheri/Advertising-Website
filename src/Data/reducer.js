@@ -2,6 +2,7 @@ import update from 'immutability-helper';
 import * as act from './action'
 
 const initialState = {
+    posts:[],
     users:[],
     currentUser:undefined
 }
@@ -34,6 +35,20 @@ const Reducer = (state = initialState, action)=>{
                     }
                 }
             })
+
+        case(act.CreatePost): //Create New Post
+            const Post = {
+                name: action.name,
+                price : action.price,
+                img : action.img,
+                description : action.description,
+                date : action.date
+            }
+            return {
+                ...state,
+                posts:[Post , ...state.posts]
+            }
+
         default: return state
     }
 }
