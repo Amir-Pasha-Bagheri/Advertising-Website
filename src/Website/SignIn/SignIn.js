@@ -103,11 +103,11 @@ class SignIn extends Component{
         return(
             <React.Fragment>
                 <ul className="Navbar">
-                    <Link to="/"><li><a href="/#" className="Brand rounded" title="Name Of Website">Website</a></li></Link>
-                    <Link to="/"><li><a href="/#" className="NavLink rounded">Home 🏠</a></li></Link>
-                    <Link to="/Add-Product" ><li><a href="/#" className="NavLink rounded">Add Your Product ✔</a></li></Link>
-                    <Link to="/Contact-Us"><li><a href="/#" className="NavLink rounded">Contact Us ☎</a></li></Link>
-                    <Link to="/Create-Account"><li><a href="/#" className="NavLink rounded" style={{color:"#cbce91ff"}}>Sign In 🙍‍♂️</a></li></Link>
+                    <Link to="/"><li className="Brand rounded" title="Name Of Website">Website</li></Link>
+                    <Link to="/"><li className="NavLink rounded">Home 🏠</li></Link>
+                    <Link to="/Add-Product" ><li className="NavLink rounded">Add Your Product ✔</li></Link>
+                    <Link to="/Contact-Us"><li className="NavLink rounded">Contact Us ☎</li></Link>
+                    <Link to="/Create-Account"><li className="NavLink rounded" style={{color:"#cbce91ff"}}>Sign In 🙍‍♂️</li></Link>
                 </ul>
 
                 <h3 className="DangerMessage bg-danger" id="DangerMessage" style={{display:"none"}}>This Username Already Exist !</h3>

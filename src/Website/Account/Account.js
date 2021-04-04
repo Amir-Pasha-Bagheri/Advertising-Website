@@ -155,11 +155,11 @@ class Account extends Component{
         return(
             <React.Fragment>
                 <ul className="Navbar">
-                    <Link to="/"><li><a href="/#" className="Brand rounded" title="Name Of Website">Website</a></li></Link>
-                    <Link to="/"><li><a href="/#" className="NavLink rounded">Home 🏠</a></li></Link>
-                    <Link to="/Add-Product"><li><a href="/#" className="NavLink rounded">Add Your Product ✔</a></li></Link>
-                    <Link to="/Contact-Us"><li><a href="/#" className="NavLink rounded">Contact Us ☎</a></li></Link>
-                    <li className="NavLink rounded" style={{color:"#cbce91ff"}} onClick={SignInClick}>{this.props.status.currentUser===undefined? 'Sign In 🙍‍♂️': this.props.status.currentUser}</li>
+                    <Link to="/"><li className="Brand rounded" title="Name Of Website">Website</li></Link>
+                    <Link to="/"><li className="NavLink rounded">Home 🏠</li></Link>
+                    <Link to="/Add-Product" ><li className="NavLink rounded">Add Your Product ✔</li></Link>
+                    <Link to="/Contact-Us"><li className="NavLink rounded">Contact Us ☎</li></Link>
+                    <li className="NavLink rounded"  style={{color:"#cbce91ff"}} onClick={SignInClick}>{this.props.status.currentUser===undefined? 'Sign In 🙍‍♂️': this.props.status.currentUser}</li>
                 </ul>
 
                 <h3 className="SuccessMessage" id="SuccessMessage" style={{display:"none"}}>

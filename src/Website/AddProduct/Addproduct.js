@@ -3,55 +3,91 @@ import {Link} from 'react-router-dom'
 import './AddProduct.css'
 import { connect } from 'react-redux'
 import history from "../../history";
+import * as act from '../../Data/action'
+import Placeholder from '../Homepage/Image/placeholder.png'
 
 class AddProduct extends Component {
     render(){
         const SignInClick = () =>{
             this.props.status.currentUser===undefined? history.push('/Create-Account'): history.push('/Account')
         }
+
+        const submitPost = () =>{
+            const name = document.getElementById('name').value
+            const price = document.getElementById('price').value
+            const img = document.getElementById('img').value
+            const description = document.getElementById('description').value
+            
+            let date = new Date();
+            const dd = String(date.getDate()).padStart(2, '0');
+            const mm = String(date.getMonth() + 1).padStart(2, '0');
+            const yyyy = date.getFullYear();
+            
+            date = yyyy + '/' + mm + '/' + dd;
+
+            if(name===''||price===''||description===''){
+                document.getElementById('DangerMessage').style.display = "block"
+                document.getElementById('SuccessMessage').style.display = "none"
+            }
+            else{
+                if(img===''){
+                    this.props.dispatch({type:act.CreatePost, name:name, price:price, img:Placeholder, description: description, date: date})
+                    document.getElementById('SuccessMessage').style.display = "block"
+                    document.getElementById('DangerMessage').style.display = "none"
+                    history.push('/')
+                }
+                else{
+                    this.props.dispatch({type:act.CreatePost, name:name, price:price, img:img, description:description, date: date})
+                    document.getElementById('SuccessMessage').style.display = "block"
+                    document.getElementById('DangerMessage').style.display = "none"
+                    history.push('/')
+                }
+            }
+        }
         return(
             <React.Fragment>
                 <ul className="Navbar">
-                    <Link to="/"><li><a href="/#" className="Brand rounded" title="Name Of Website">Website</a></li></Link>
-                    <Link to="/"><li><a href="/#" className="NavLink rounded">Home 🏠</a></li></Link>
-                    <Link to="/Add-Product"><li><a href="/#" className="NavLink rounded" style={{color:"#cbce91ff"}}>Add Your Product ✔</a></li></Link>
-                    <Link to="/Contact-Us"><li><a href="/#" className="NavLink rounded">Contact Us ☎</a></li></Link>
+                    <Link to="/"><li className="Brand rounded" title="Name Of Website">Website</li></Link>
+                    <Link to="/"><li className="NavLink rounded">Home 🏠</li></Link>
+                    <Link to="/Add-Product" ><li className="NavLink rounded" style={{color:"#cbce91ff"}}>Add Your Product ✔</li></Link>
+                    <Link to="/Contact-Us"><li className="NavLink rounded">Contact Us ☎</li></Link>
                     <li className="NavLink rounded" onClick={SignInClick}>{this.props.status.currentUser===undefined? 'Sign In 🙍‍♂️': this.props.status.currentUser}</li>
                 </ul>
 
                 {this.props.status.currentUser===undefined ? 
                 <div className="SuggestAccount">
                     <h4>Create Account To Sell Your Own Products</h4>
-                    <Link to="/Create-Account"><h5><a href="/#">Create Account</a></h5></Link>
-                    <h6>Already Have An Account ?  <Link to="/Log-In"><a href="/#">Click Here</a></Link></h6>
+                    <Link to="/Create-Account"><h5>Create Account</h5></Link>
+                    <h6>Already Have An Account ?  <Link to="/Log-In">Click Here</Link></h6>
                 </div>:
                 false}
 
-                {this.props.status.currentUser!==undefined ? 
-                <div>
-                    <h3 className="SuccessMessage" id="SuccessMessage">
+                    <h3 className="SuccessMessage" id="SuccessMessage" style={{display:"none"}}>
                         Your Post Added Successfully<br/><br/>
                         Go To HomePage And See Your Product
                     </h3>
-                    <form className="CreatePost">
+
+                    <h3 className="DangerMessage bg-danger" id="DangerMessage" style={{display:"none"}}>⚠ Plaese Fill Out Form !</h3>
+
+                {this.props.status.currentUser!==undefined ? 
+                <div>
+                    <div className="CreatePost">
                         <hr/>
 
                         <label htmlFor="name"> Name Of Your Product :</label>
-                        <input type="text" className="form-control" name="name" autoComplete="off" placeholder="👕"/>
+                        <input type="text" className="form-control" name="name" id="name" autoComplete="off" placeholder="👕" required/>
 
                         <label htmlFor="price"> Price ($):</label>
-                        <input type="number" className="form-control" name="price" autoComplete="off" placeholder="💵"/>
+                        <input type="number" className="form-control" name="price" id="price" autoComplete="off" placeholder="💵" required/>
 
                         <label htmlFor="photo" style={{paddingTop:"20px"}}> Choose A Picture :</label><br/>
-                        <input type="file" className="InputImage" name="photo" accept="image/*"/><br/>
+                        <input type="file" className="InputImage" name="photo" id="img" accept="image/*" required/><br/>
 
                         <label htmlFor="description">Description :</label><br/>
-                        <textarea rows="3" cols="30" className="form-control" placeholder="✏"></textarea>
+                        <textarea rows="3" cols="30" className="form-control" id="description" placeholder="✏" required></textarea>
 
-                        <h5 className="ErrorMessage" id="Message">⚠ Plaese Enter Something </h5>
-                        
-                        <button type="submit" style={{backgroundColor:"rgb(181, 228, 123)",border:"1px solid rgb(88, 110, 61)"}}>Add</button>
-                    </form>
+                        <button style={{backgroundColor:"rgb(181, 228, 123)",border:"1px solid rgb(88, 110, 61)"}} onClick={submitPost}>Add</button>
+                    </div>
                 </div>
                 :false}
 

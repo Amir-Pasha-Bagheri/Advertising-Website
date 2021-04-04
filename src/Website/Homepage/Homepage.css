@@ -105,7 +105,7 @@
     padding: 20px 20px;
 }
 .Post{
-    width: 500px;
+    width: 600px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
@@ -117,12 +117,12 @@
     float: left;
 }
 .Body{
-    width: 500px;
+    width: 600px;
 }
 .Description{
     padding: 10px 30px;
     height: 110px;
-    width: 350px;
+    width: 450px;
     background-color: rgb(255, 255, 242);
     overflow-y: scroll;
     overflow-x: hidden;
