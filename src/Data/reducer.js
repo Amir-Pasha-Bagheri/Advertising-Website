@@ -1,8 +1,17 @@
 import update from 'immutability-helper';
 import * as act from './action'
+import placeholder from "./Image/placeholder.png"
+import shirt from './Image/Shirt.jpg'
 
 const initialState = {
-    posts:[],
+    posts:[
+        {name: 'Clothes' ,price : 36 ,img : shirt ,description : "This Is My Sister's Shirt." ,date : '2021/4/4'},
+        {name: 'Shoes' ,price : 50 ,img : placeholder ,description : 'These Are My Blue Shoes Wich I Really Love Them...' ,date : '2021/3/24'}
+    ],
+    sortPosts:[
+        {name: 'Clothes' ,price : 36 ,img : shirt ,description : "This Is My Sister's Shirt." ,date : '2021/4/4'},
+        {name: 'Shoes' ,price : 50 ,img : placeholder ,description : 'These Are My Blue Shoes Wich I Really Love Them...' ,date : '2021/3/24'} 
+    ],
     users:[],
     currentUser:undefined
 }
@@ -46,7 +55,8 @@ const Reducer = (state = initialState, action)=>{
             }
             return {
                 ...state,
-                posts:[Post , ...state.posts]
+                posts:[Post , ...state.posts],
+                sortPosts:[Post , ...state.posts]
             }
 
         default: return state
