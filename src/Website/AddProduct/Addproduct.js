@@ -4,7 +4,7 @@ import './AddProduct.css'
 import { connect } from 'react-redux'
 import history from "../../history";
 import * as act from '../../Data/action'
-import Placeholder from '../Homepage/Image/placeholder.png'
+import Placeholder from '../../Data/Image/placeholder.png'
 
 class AddProduct extends Component {
     render(){
@@ -24,20 +24,20 @@ class AddProduct extends Component {
             const yyyy = date.getFullYear();
             
             date = yyyy + '/' + mm + '/' + dd;
-
+            const priceFloat = parseFloat(price)
             if(name===''||price===''||description===''){
                 document.getElementById('DangerMessage').style.display = "block"
                 document.getElementById('SuccessMessage').style.display = "none"
             }
             else{
                 if(img===''){
-                    this.props.dispatch({type:act.CreatePost, name:name, price:price, img:Placeholder, description: description, date: date})
+                    this.props.dispatch({type:act.CreatePost, name:name, price:priceFloat, img:Placeholder, description: description, date: date})
                     document.getElementById('SuccessMessage').style.display = "block"
                     document.getElementById('DangerMessage').style.display = "none"
                     history.push('/')
                 }
                 else{
-                    this.props.dispatch({type:act.CreatePost, name:name, price:price, img:img, description:description, date: date})
+                    this.props.dispatch({type:act.CreatePost, name:name, price:priceFloat, img:img, description:description, date: date})
                     document.getElementById('SuccessMessage').style.display = "block"
                     document.getElementById('DangerMessage').style.display = "none"
                     history.push('/')
