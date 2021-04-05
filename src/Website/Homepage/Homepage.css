@@ -59,12 +59,14 @@
     .NavLink{clear: left;background-color: rgb(149, 77, 216);width: 100%;}
     .SuggestAccount{width: auto; margin: 0px 30px;}
 }
-.Type, td{
-    border: 1px solid rgb(214, 214, 214);
+.Type td{
     height: 30px;
     transition: 0.3s;
 }
 .Type{
+    border: 1px solid rgb(214, 214, 214);
+    height: 30px;
+    transition: 0.3s;
     float: right;
     margin-right: 50px;
     margin-top: 50px;
@@ -72,9 +74,14 @@
     width: 350px;
     border-collapse: inherit;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .Type tr:hover{
+    cursor: pointer;
+    font-size: 20px;
+    color: rgb(185, 156, 212);
+}
+.CurrentMode{
     cursor: pointer;
     background-color: rgba(221, 221, 221, 0.849);
     font-size: 20px;

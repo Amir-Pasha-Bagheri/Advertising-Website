@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import './Homepage.css'
 import {Link} from 'react-router-dom'
-import placeholder from "./Image/placeholder.png"
-import shirt from './Image/Shirt.jpg'
 import { connect } from 'react-redux'
 import history from "../../history";
 import Post from '../Post/Post' 
@@ -38,56 +36,44 @@ class Homepage extends Component {
                                 <td className="HeaderTable"><h5>Price</h5></td>
                             </tr>
                             <tr>
-                                <td title="Cheap To Expensive">Down To Up</td>
+                                <td title="Cheap To Expensive">
+                                    <Link to="Home-Page-DU" id="DU"
+                                    style={{textDecoration:"none",color:'black'}}
+                                    onMouseEnter={()=>document.getElementById('DU').style.color='rgb(185, 156, 212)'}
+                                    onMouseLeave={()=>document.getElementById('DU').style.color='black'}>
+                                    Down To Up</Link>
+                                </td>
                             </tr>
                             <tr>
-                                <td title="Expensive To Cheap">Up To Down</td>
+                                <td title="Expensive To Cheap">
+                                    <Link to="Home-Page-UD" id="UD"
+                                    style={{textDecoration:"none",color:'black'}}
+                                    onMouseEnter={()=>document.getElementById('UD').style.color='rgb(185, 156, 212)'}
+                                    onMouseLeave={()=>document.getElementById('UD').style.color='black'}>
+                                    Up To Down</Link>
+                                </td>
                             </tr>
                             <tr>
                                 <td className="HeaderTable"><h5>Date</h5></td>
                             </tr>
                             <tr>
-                                <td title="Recent Products">Newest</td>
+                                <td title="Recent Products" className="CurrentMode">Newest</td>
                             </tr>
                             <tr>
-                                <td title="Latest Products">Oldest</td>
+                                <td title="Latest Products">
+                                    <Link to="Home-Page-O" id="O"
+                                    style={{textDecoration:"none",color:'black'}}
+                                    onMouseEnter={()=>document.getElementById('O').style.color='rgb(185, 156, 212)'}
+                                    onMouseLeave={()=>document.getElementById('O').style.color='black'}>
+                                    Oldest</Link>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div id="page1">
-                    {this.props.status.posts.map((post,index)=><Post key={index} name={post.name} price={post.price} img={post.img} description={post.description} date={post.date}/>)}
-                    <div className="Post">
-                        <header>
-                            <h5 className="Name" title="Name Of Product">Clothes</h5>
-                            <span className="Time badge" title="Date">2021/4/4</span>
-                        </header>
-                        <div className="Body">
-                            <img src={shirt} alt="Default" title="Image" loading="lazy"/>
-                            <div className="Description" title="Description">
-                                This Is My Sister's Shirt.
-                            </div>
-                            <button className="More">More Details And Negotiation</button>
-                            <button className="PriceButton" disabled>36 $</button>
-                        </div>
-                        <hr/>
-                    </div>
-
-                    <div className="Post">
-                        <header>
-                            <h5 className="Name" title="Name Of Product">Shoes</h5>
-                            <span className="Time badge" title="Date">2021/3/24</span>
-                        </header>
-                        <div className="Body">
-                            <img src={placeholder} alt="Default" title="Image" loading="lazy"/>
-                            <div className="Description" title="Description">
-                                These Are My Blue Shoes Wich I Really Love Them...
-                            </div>
-                            <button className="More">More Details And Negotiation</button>
-                            <button className="PriceButton" disabled>50 $</button>
-                        </div>
-                        <hr/>
-                    </div>
+                    {this.props.status.posts.map((post,index)=>
+                    <Post key={index} name={post.name} price={post.price} img={post.img} description={post.description} date={post.date}/>)}
                 </div>
             </React.Fragment>
         )
