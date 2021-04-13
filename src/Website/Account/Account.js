@@ -166,7 +166,7 @@ class Account extends Component{
                     Password Updated !!!
                 </h3>
 
-                <h3 className="DangerMessage bg-danger" id="DangerMessage" style={{display:"none"}}>
+                <h3 className="DangerMessage bg-danger" id="DangerMessage" style={{display:"none"}}>error!
                 </h3>
 
                 <div className="Container">
