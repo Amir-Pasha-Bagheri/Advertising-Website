@@ -88,7 +88,7 @@ class Account extends Component{
                 x.setAttribute('autoComplete','off')
             }
             else {
-                x.type = 'password1'
+                x.type = 'password'
             }
         }
         function checkbox2(){
@@ -98,7 +98,7 @@ class Account extends Component{
                 y.setAttribute('autoComplete','off')
             }
             else {
-                y.type = 'password2'
+                y.type = 'password'
             }
         }
         //Change Password Display Form
